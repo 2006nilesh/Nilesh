@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+	<style>
+	body{
+	background-size: cover;
+	position: relative;
+	background-repeat:;	
+	}
+	.form-box{
+	width: 90%;
+	max-width: 450px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-45%, 35%);
+	Background-image: linear-gradient(to left,#a4b7ff,#ffc1c1);
+	padding: 50px 60px 70px;
+	text-align: center;
+	border-radius: 30px;
+	height:460px;
+	}
+	.form-box h1{
+	font-size: 30px;
+	margin-bottom: 50px;
+	margin-top: 2px;
+	color:#3c00a0;
+	position: relative;
+	}
+	.input-field{
+	Background: #eaeaea;
+	margin: 15px 0;
+	border-radius: 10px;
+	display: flex;
+	max-height: 65px;
+	transition: max-height 0.5s;
+	overflow: hidden;
+	}
+	input{
+	width:100%;
+	Background: transparent;
+	border: 0;
+	outline: 0;
+	padding: 18px 15px;
+	}
+	.input-field i{
+	transform: translate(-50%, 35%);
+	margin-left: 15px;
+	color:#999;
+	}
+	form p a{
+	text-decoration: none;
+	text-align:left;
+	color: #3c00a0;
+	}
+	.btn-field{
+	width: 100%;
+	display:flex;
+	justify-content: space-between;
+	}
+	.btn-field button{
+	flex-basis: 48%;
+	background: #3c00a0;
+	color:#fff;
+	height: 40px;
+	border-radius: 40px;
+	border: 0;
+	outline 0;
+	cursor: pointer;
+	transition: background 1s;
+	}
+	.input-group{
+	height: 280px;
+	}
+	.btn-field button.disable{
+	background: #eaeaea;
+	color: #555;
+	}
+	.submit{
+	flex-basis: 48%;
+	background: #3c00a0;
+	color:#fff;
+	height: 40px;
+	border-radius: 400px;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	}
+	p{
+	font-size: 20px;
+	text-align: left;
+	}
+	header{
+	font-size: 80px;
+	}
+	</style>
+	<script src="https://kit.fontawesome.com/13ef6cdec3.js" crossorigin="anonymous"></script>
+</head>
+<body Background="H:\WEB DEV\images\collegec.jpg">
+    <div class="container">
+		<div class="form-box">
+		<header>
+		<h1 id="title">Register</h1>
+		</header>
+		<form onsubmit="myfunc(event)">
+			<div class="input-group">
+			<div class="Register">
+				<div class="input-field" id="nameField">
+				<i class="fa-solid fa-user"></i>
+				<input type="text"  name="name" id="name"  placeholder="Name" autocomplete="on">
+				</div>
+				<div class="input-field">
+				<i class="fa-solid fa-envelope"></i>
+				<input type="email" name="email" id="email" placeholder="Email" autocomplete="on">
+				</div>
+				<div class="input-field">
+				<i class="fa-solid fa-lock"></i>
+				<input type="password" name="password" id="password" placeholder="Password">
+				</div>
+				<p>Forget password <a href="file:///H:/WEB%20DEV/password.html">Click here!</a></p>
+				<div class="btn-field">
+				<button type="button" id="Register">Register</button>
+				<button type="button" id="Login" class="disable">Login</button>
+			</div><br>
+				<div class="submit">
+				<button type="button" id="Submit" class="submit" onclick="myfunc(event)">Submit</button>
+				</div>
+				<p><a href="file:///H:/WEB%20DEV/code.html"><u>Know More</u></a></p>
+				</div>
+			</div>
+		</form>
+	</div>
+	</div>
+<script>
+let Register = document.getElementById("Register");
+let Login = document.getElementById("Login");
+let nameField = document.getElementById("nameField");
+let title = document.getElementById("title");
+
+Login.onclick = function(){
+	nameField.style.maxHeight = "0";
+	title.innerHTML = "Login";
+	Register.classList.add("disable");
+	Login.classList.remove("disable");
+}
+Register.onclick = function(){
+	nameField.style.maxHeight = "65px" ;
+	title.innerHTML = "Register";
+	Register.classList.remove("disable");
+	Login.classList.add("disable");
+}
+</script>
+<script type="text/javascript">
+	function myfunc(event) {
+		event.preventDefault();
+		
+		var name = document.getElementById("name").value;
+		var email = document.getElementById("email").value;
+		var password = document.getElementById("password").value;
+		
+		localStorage.setItem('ls_name',name);
+		localStorage.setItem('ls_email',email);
+		localStorage.setItem('ls_password',password);
+		
+	}
+</script>
+</body>
+</html>
+
+</html>
